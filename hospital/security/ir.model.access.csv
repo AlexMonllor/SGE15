@@ -1,0 +1,8 @@
+# Pacient access
+access_hospital_pacient_user,access_hospital_pacient_user,model_hospital_pacient,base.group_user,1,1,1,1
+
+# Metge access
+access_hospital_metge_user,access_hospital_metge_user,model_hospital_metge,base.group_user,1,1,1,1
+
+# Diagnòstic access
+access_hospital_diagnostic_user,access_hospital_diagnostic_user,model_hospital_diagnostic,base.group_user,1,1,1,1

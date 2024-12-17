@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cicle_formatiu_director,access_cicle_formatiu_director,model_cicle_formatiu,base.group_user,1,1,1,1
+access_cicle_formatiu_professor,access_cicle_formatiu_professor,model_cicle_formatiu,base.group_user,1,0,0,0
+access_modul_director,access_modul_director,model_cicle_formatiu_modul,base.group_user,1,1,1,1
+access_modul_professor,access_modul_professor,model_cicle_formatiu_modul,base.group_user,1,0,0,0
+access_alumne,access_alumne,model_cicle_formatiu_alumne,base.group_user,1,1,1,1
+access_professor,access_professor,model_cicle_formatiu_professor,base.group_user,1,1,1,1

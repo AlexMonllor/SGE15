@@ -1,0 +1,98 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="lista_tareas.list">
+      <field name="name">lista_tareas list</field>
+      <field name="model">lista_tareas.lista_tareas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="lista_tareas.planet_kanban_view">
+      <field name="name">lista_tareas</field>
+      <field name="model">lista_tareas.lista_tareas</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="name" />
+          <field name="id" />
+          <field name="image" />
+          <templates>
+            <t t-name="kanba-box">
+              <div class="oe_product_vignette">
+                <a type="open">
+                  <img class="o_image_64_contain"
+                        t-att-att="record.name.value"
+                        t-att-src="kanban_image('lista_tareas.lista_tareas','image', record.id.raw_value)" />
+                </a>
+                <div class="oe_product_descc">
+                <h4>
+                <a type="edit">
+                  <field name="id"></field>
+                  <field name="name"></field>
+                </a>
+                  </h4>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="listalista_tareas.travel_calendar">
+                  <field name="name">travel calendar</field>
+                  <field name="model">lista_tareas.travel</field>
+                  <field name="arch" type="xml">
+                      <claendar string="Travel Calendar"
+                                date_start="launch_time"
+                                date_delay="distance"
+                                color="origin_shchool">
+                      <field name="name"/>
+                    </calendar>
+                  </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="lista_tareas.action_window">
+      <field name="name">Listado de Tareas pendientes</field>
+      <field name="res_model">lista_tareas.lista_tareas</field>
+      <field name="view_mode">tree,form,kanban,calendar</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!-- 
+    <record model="ir.actions.server" id="lista_tareas.action_server">
+      <field name="name">lista_tareas server</field>
+      <field name="model_id" ref="model_lista_tareas_lista_tareas"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="lista_tareas" id="lista_tareas.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="lista_tareas.menu_1" parent="lista_tareas.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name = "Mostrar lista" id="lista_tareas.menu_1_list" parent="lista_tareas.menu_1" action="lista_tareas.action_window">
+  </data>
+</odoo>

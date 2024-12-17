@@ -1,0 +1,125 @@
+<odoo>
+    <!-- Vista de Cicle Formatiu -->
+    <record id="view_cicle_formatiu_form" model="ir.ui.view">
+        <field name="name">cicle.formatiu.form</field>
+        <field name="model">cicle.formatiu</field>
+        <field name="arch" type="xml">
+            <form string="Cicle Formatiu">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="descripcio"/>
+                    </group>
+                    <notebook>
+                        <page string="Mòduls">
+                            <field name="moduls_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="professor_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_cicle_formatiu_tree" model="ir.ui.view">
+        <field name="name">cicle.formatiu.tree</field>
+        <field name="model">cicle.formatiu</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="descripcio"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de Mòdul -->
+    <record id="view_modul_form" model="ir.ui.view">
+        <field name="name">cicle.formatiu.modul.form</field>
+        <field name="model">cicle.formatiu.modul</field>
+        <field name="arch" type="xml">
+            <form string="Mòdul">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="cicle_id"/>
+                        <field name="professor_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Alumnes Matriculats">
+                            <field name="alumne_ids">
+                                <tree>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_modul_tree" model="ir.ui.view">
+        <field name="name">cicle.formatiu.modul.tree</field>
+        <field name="model">cicle.formatiu.modul</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="cicle_id"/>
+                <field name="professor_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de Alumne -->
+    <record id="view_alumne_form" model="ir.ui.view">
+        <field name="name">cicle.formatiu.alumne.form</field>
+        <field name="model">cicle.formatiu.alumne</field>
+        <field name="arch" type="xml">
+            <form string="Alumne">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <notebook>
+                        <page string="Mòduls Matriculats">
+                            <field name="mòduls_ids">
+                                <tree>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de Professor -->
+    <record id="view_professor_form" model="ir.ui.view">
+        <field name="name">cicle.formatiu.professor.form</field>
+        <field name="model">cicle.formatiu.professor</field>
+        <field name="arch" type="xml">
+            <form string="Professor">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="num_collegiat"/>
+                    </group>
+                    <notebook>
+                        <page string="Mòduls Imparteix">
+                            <field name="mòduls_ids">
+                                <tree>
+                                    <field name="name"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
