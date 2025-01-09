@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ej03-comics_simple/_ej03-comics_simple/,ej03-comics_simple/.ej03-comics_simple/,model_ej03-comics_simple/_ej03-comics_simple/,base.group_user,1,1,1,1
